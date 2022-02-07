@@ -1,0 +1,34 @@
+server:
+  port: 8888
+
+#数据库配置
+spring:
+  datasource:
+    druid:
+      username: root
+      password: 1234567
+      url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+#redis配置
+  redis:
+    host: localhost
+    port: 6379
+  servlet:
+    multipart:
+      # 上传文件总的最大值
+      max-request-size: 20MB
+      # 单个文件的最大值
+      max-file-size: 2MB
+
+#mp配置
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: ms_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+qiniu:
+  accessKey: cOt7f44E1oAT6JLhkwKoFH1_BWAb0xgSDy6XAoQ2
+  accessSecretKey: 2cIvw-HsBHnFICiw5nY7W03n2W-Z-CyWXON1DCMl
