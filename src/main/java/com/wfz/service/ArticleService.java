@@ -24,4 +24,6 @@ public interface ArticleService extends IService<Article> {
     ArticleVo findArticleById(Long articleId);
 
     Result publish(ArticleParam articleParam);
+
+    ArticleVo testFirst();
 }

@@ -89,6 +89,13 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         }
         return articleList;
     }
+//    private List<ArticleVo> copyList(List<Article> records,boolean isTag,boolean isAuthor){
+//        ArrayList<ArticleVo> articleList = new ArrayList<>();
+//        for (Article record :records){
+//            articleList.add(copy(record,isTag,isAuthor,false,false));
+//        }
+//        return articleList;
+//    }
 
     private List<ArticleVo> copyList(List<Article> records,boolean isTag,boolean isAuthor,boolean isBody,boolean isCategory) {
         ArrayList<ArticleVo> articleList = new ArrayList<>();
@@ -218,5 +225,12 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         ArticleVo articleVo = new ArticleVo();
         articleVo.setId(article.getId());
         return Result.success(articleVo);
+    }
+    ////////////////////////////////////////////////////////////////////////
+
+    @Override
+    public ArticleVo testFirst() {
+
+        return null;
     }
 }

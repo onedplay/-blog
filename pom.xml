@@ -14,12 +14,15 @@
     <name>blog</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>11</java.version>
+        <!--该部分还可以用来做版本管理，更加一目了然，可参考父子工程pom.xml-->
+        <java.version>8</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!--继承了父工程的该依赖版本，如有特殊需要可自定义注明使用的版本-->
         </dependency>
 
         <dependency>
@@ -27,6 +30,7 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+            <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
