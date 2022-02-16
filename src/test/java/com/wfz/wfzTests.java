@@ -31,14 +31,14 @@ public class wfzTests {
     @Test
     public void test1(){
 
-//        Article article = new Article();
+        Article article = new Article();
 //        article.setAuthorId(3l);
 //        article.setBodyId(20l);
 //        article.setCategoryId(2l);
 //        article.setCommentCounts(20);
 //        article.setCreateDate(1621947720727l);
-//        article.setId(13l);
-//        article.setSummary("mybatisplus学习专用，测试13");
+        article.setId(1405916999732707336l);
+        article.setSummary("");
 //        article.setWeight(0);
 //        article.setTitle("测试学习13");
 //        article.setViewCounts(30);
@@ -57,7 +57,14 @@ public class wfzTests {
         LambdaQueryWrapper<Article> queryWrapper = new LambdaQueryWrapper<>();
         HashMap<SFunction<Article,?>, Object> map = new HashMap<>();
         map.put(Article::getId,1405916999732707336L);
-        queryWrapper.allEq(map);
+        map.put(Article::getSummary,null);
+//        QueryWrapper<Article> queryWrapper1 = new QueryWrapper<>();
+//        HashMap<String, Object> map1 = new HashMap<>();
+//        map1.put("id",1405916999732707336L);
+//        map1.put("summary",null);
+//        queryWrapper1.allEq((k, v) -> k.equals("summary"), map1,false);
+        articleMapper.updateById(article);
+        queryWrapper.groupBy(Article::getTitle);
         articleMapper.selectList(queryWrapper);
     }
 }

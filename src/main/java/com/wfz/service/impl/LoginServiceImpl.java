@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 @Transactional
 public class LoginServiceImpl implements LoginService {
-    private static final String slat = "mszlu!@#";
+    private static final String slat = "wfz!@#";
     @Autowired
     @Lazy
     private SysUserService sysUserService;
@@ -125,5 +125,9 @@ public class LoginServiceImpl implements LoginService {
 
         redisTemplate.opsForValue().set("TOKEN_"+token, JSON.toJSONString(sysUser),1, TimeUnit.DAYS);
         return Result.success(token);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(DigestUtils.md5Hex("admin"+slat));
     }
 }

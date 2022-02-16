@@ -7,7 +7,9 @@ import com.wfz.dao.dos.Archives;
 import com.wfz.dao.pojo.Article;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface ArticleMapper extends BaseMapper<Article> {
