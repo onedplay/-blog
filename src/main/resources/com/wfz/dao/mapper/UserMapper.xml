@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wfz.dao.mapper.UserMapper">
+
+    <select id="test2" resultMap="wfzceshi">
+        select * from ms_user,ms_user_role,ms_role where ms_user.id=ms_user_role.userId and roleId=ms_role.id
+    </select>
+    
+    <resultMap id="wfzceshi" type="com.wfz.dao.pojo.User">
+        <id property="id" column="id"></id>
+        <result property="userName" column="username"></result>
+        <result property="email" column="email"></result>
+        <result property="password" column="password"></result>
+        <result property="phoneNum" column="phoneNum"></result>
+
+        <collection property="roleList" ofType="com.wfz.dao.pojo.Role">
+            <id property="id" column="id1"></id>
+            <result property="roleName" column="roleName"></result>
+            <result property="roleDesc" column="roleDesc"></result>
+        </collection>
+
+    </resultMap>
+
+</mapper>
